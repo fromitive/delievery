@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+	{% for item in delivery %}
+	<ul class="home">
+		<li>
+		<h1>{{item.name}}</h1>
+		<h2>{{item.kind_of_news}}</h2>
+		{% if item.etc %}
+		<h3>{{item.etc}}</h3>
+		{% endif %}
+		{% if item.housetype == "주택" %}
+			<p><img src={{"static/images/"|add:item.images}} height="860" width="700"></p>
+		{% endif %}
+		</li>
+	</ul>	
+	<hr>
+	{% endfor %}
+</html>
+
